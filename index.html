@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Quote Machine</title>
+    <script>
+        const QUOTEBANK = [
+            {
+                quote: "Don't let the noise of others' opinions drown out your own inner voice",
+                author: "Steve Jobs"
+            },{
+                quote: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe",
+                author: "Albert Einshtein"
+            },{ 
+                quote: "So many books, so little time",
+                author: "Frank Zappa"
+            },{ 
+                quote: "A room without books is like a body without a soul.",
+                author: "Marcus Tullius Cicero"
+            },{ 
+                quote: "Be the change that you wish to see in the world",
+                author: "Mahatma Gandhi"
+            },
+        ]
+        window.onload = init;
+        function init(){
+            generateQuote()
+        }
+        function generateQuote(){
+            document.getElementById("text").innerText = QUOTEBANK[0].quote
+            document.getElementById("author").innerText = QUOTEBANK[0].author
+        }
+    </script>
+
+    <style>
+        *{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <wrappper id="quote-box">
+        <div id="text"></div>
+        <div id="author"></div>
+        <button id="new-quote" onclick="generateQuote();">New Quote</button>
+        <a href="" id="tweet-quote">Tweet Quote</a>
+    </wrappper>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    
+</body>
+</html>
