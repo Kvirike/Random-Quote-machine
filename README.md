@@ -1,1 +1,1 @@
-## [A Random Quote machine] (https://kvirike.github.io/Random-Quote-machine/)
+## [A Random Quote machine](https://kvirike.github.io/Random-Quote-machine/)
