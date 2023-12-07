@@ -26,26 +26,39 @@
             generateQuote()
         }
         function generateQuote(){
-            document.getElementById("text").innerText = QUOTEBANK[0].quote
-            document.getElementById("author").innerText = QUOTEBANK[0].author
+            let quoteSize = QUOTEBANK.length
+            let randomIndex = Math.floor(Math.random() * quoteSize);
+            let randomQuoteData = QUOTEBANK[randomIndex]
+            let twitterLink = `https://twitter.com/intent/tweet?hashtags=quotes&text=`
+
+            // adding the quote
+            let quoteInApiFormat = randomQuoteData.quote.replace(/ /g, "%20");
+            twitterLink += quoteInApiFormat
+            // adding the author
+            let authorInApiFormat = randomQuoteData.author.replace(/ /g, "%20");
+            twitterLink += " - " + authorInApiFormat
+            
+            document.getElementById('tweet-quote').href  = twitterLink
+            document.getElementById("text").innerText = randomQuoteData.quote
+            document.getElementById("author").innerText = randomQuoteData.author
         }
     </script>
 
     <style>
         *{
-            font-size: 2rem;
+            font-size: 1.5rem;
+            margin: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <wrappper id="quote-box">
+    <wrapper id="quote-box">
         <div id="text"></div>
         <div id="author"></div>
         <button id="new-quote" onclick="generateQuote();">New Quote</button>
-        <a href="" id="tweet-quote">Tweet Quote</a>
-    </wrappper>
+        <a href="#" id="tweet-quote" target="_blank">Tweet Quote</a>
+    </wrapper>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
-    
 </body>
 </html>
